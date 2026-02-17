@@ -1,0 +1,668 @@
+/* Reset e variáveis */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-green: #2d5f3f;
+    --light-green: #4a8f5e;
+    --accent-green: #5fa777;
+    --bg-light: #f8fdf9;
+    --white: #ffffff;
+    --text-dark: #1a1a1a;
+    --text-gray: #666666;
+    --highlight-yellow: #ffc107;
+    --shadow-light: 0 2px 10px rgba(0,0,0,0.08);
+    --shadow-medium: 0 4px 20px rgba(0,0,0,0.12);
+    --shadow-strong: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===== SEÇÃO 1: PRODUTO (HERO) ===== */
+.hero-section {
+    background: linear-gradient(135deg, var(--white) 0%, var(--bg-light) 100%);
+    padding: 80px 20px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeInLeft 1s ease-out;
+}
+
+.product-image {
+    max-width: 100%;
+    height: auto;
+    filter: drop-shadow(0 20px 40px rgba(45, 95, 63, 0.2));
+    transition: transform 0.3s ease;
+}
+
+.product-image:hover {
+    transform: scale(1.05);
+}
+
+.hero-text {
+    animation: fadeInRight 1s ease-out;
+}
+
+.badge {
+    display: inline-block;
+    background: var(--accent-green);
+    color: var(--white);
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--primary-green);
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.hero-text .highlight {
+    color: var(--light-green);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--text-gray);
+    margin-bottom: 25px;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.stars {
+    color: #ffc107;
+    font-size: 1.3rem;
+}
+
+.rating-text {
+    color: var(--text-gray);
+    font-size: 0.95rem;
+}
+
+.benefits {
+    margin: 30px 0;
+    display: grid;
+    gap: 15px;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1rem;
+}
+
+.benefit-item i {
+    color: var(--light-green);
+    font-size: 1.2rem;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--primary-green);
+    color: var(--white);
+    padding: 18px 40px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 30px;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-medium);
+}
+
+.cta-button:hover {
+    background: var(--light-green);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-strong);
+}
+
+.trust-badges {
+    display: flex;
+    gap: 30px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.trust-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-gray);
+    font-size: 0.9rem;
+}
+
+.trust-item i {
+    color: var(--accent-green);
+    font-size: 1.3rem;
+}
+
+/* ===== SEÇÃO 2: DEPOIMENTOS ===== */
+.testimonials-section {
+    background: var(--white);
+    padding: 100px 20px;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-header h2 {
+    font-size: 2.8rem;
+    color: var(--primary-green);
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.section-header p {
+    font-size: 1.2rem;
+    color: var(--text-gray);
+}
+
+.testimonials-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-green);
+}
+
+.stars-small {
+    color: #ffc107;
+    font-size: 1.2rem;
+}
+
+.stat-label {
+    color: var(--text-gray);
+    font-size: 1rem;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.testimonial-card {
+    background: var(--white);
+    border: 2px solid #e8f5e9;
+    border-radius: 15px;
+    padding: 30px;
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+    border-color: var(--accent-green);
+}
+
+.testimonial-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.testimonial-info h4 {
+    font-size: 1.1rem;
+    color: var(--primary-green);
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.location {
+    font-size: 0.85rem;
+    color: var(--text-gray);
+}
+
+.testimonial-header .stars {
+    color: #ffc107;
+    font-size: 1rem;
+}
+
+.testimonial-text {
+    color: var(--text-dark);
+    line-height: 1.7;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.verified {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--light-green);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.verified i {
+    font-size: 1rem;
+}
+
+/* ===== SEÇÃO 3: OFERTAS ===== */
+.offers-section {
+    background: linear-gradient(135deg, var(--bg-light) 0%, var(--white) 100%);
+    padding: 100px 20px;
+}
+
+.offers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.offer-card {
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-light);
+    transition: all 0.3s ease;
+    border: 3px solid transparent;
+}
+
+.offer-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-strong);
+}
+
+/* DESTAQUE: Pacote mais vendido */
+.offer-card.featured {
+    border-color: var(--highlight-yellow);
+    transform: scale(1.08);
+    box-shadow: var(--shadow-strong);
+    position: relative;
+}
+
+.offer-card.featured:hover {
+    transform: scale(1.11);
+}
+
+.best-seller-badge {
+    background: linear-gradient(135deg, #ff9800 0%, #ff6f00 100%);
+    color: var(--white);
+    text-align: center;
+    padding: 12px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.offer-header {
+    background: var(--primary-green);
+    color: var(--white);
+    text-align: center;
+    padding: 25px 20px;
+}
+
+.offer-card.featured .offer-header {
+    background: linear-gradient(135deg, var(--primary-green) 0%, var(--light-green) 100%);
+}
+
+.offer-header h3 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.offer-subtitle {
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+.offer-content {
+    padding: 35px 25px;
+    text-align: center;
+}
+
+.offer-icon {
+    font-size: 3rem;
+    color: var(--accent-green);
+    margin-bottom: 20px;
+}
+
+.offer-quantity {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.quantity-number {
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--primary-green);
+    line-height: 1;
+}
+
+.quantity-text {
+    font-size: 1.2rem;
+    color: var(--text-gray);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.offer-price {
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.price-original {
+    font-size: 1.1rem;
+    color: var(--text-gray);
+    text-decoration: line-through;
+}
+
+.price-current {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-green);
+}
+
+.price-installments {
+    font-size: 0.95rem;
+    color: var(--text-gray);
+}
+
+.economy {
+    display: inline-block;
+    background: #e8f5e9;
+    color: var(--light-green);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.offer-features {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.offer-features li {
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+}
+
+.offer-features li:last-child {
+    border-bottom: none;
+}
+
+.offer-features i {
+    color: var(--light-green);
+    font-size: 1.1rem;
+}
+
+.offer-button {
+    width: 100%;
+    background: var(--primary-green);
+    color: var(--white);
+    border: none;
+    padding: 18px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-light);
+}
+
+.offer-button:hover {
+    background: var(--light-green);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-medium);
+}
+
+.offer-card.featured .offer-button {
+    background: linear-gradient(135deg, #ff9800 0%, #ff6f00 100%);
+    font-size: 1.2rem;
+    padding: 20px;
+}
+
+.offer-card.featured .offer-button:hover {
+    background: linear-gradient(135deg, #ff6f00 0%, #f57c00 100%);
+}
+
+/* Garantia */
+.guarantee-section {
+    margin: 60px 0;
+    padding: 40px;
+    background: linear-gradient(135deg, #e8f5e9 0%, #f1f8f4 100%);
+    border-radius: 15px;
+    box-shadow: var(--shadow-light);
+}
+
+.guarantee-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.guarantee-icon {
+    font-size: 4rem;
+    color: var(--light-green);
+}
+
+.guarantee-text h3 {
+    color: var(--primary-green);
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.guarantee-text p {
+    color: var(--text-gray);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Formas de pagamento */
+.payment-methods {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.payment-title {
+    color: var(--text-gray);
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.payment-icons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.payment-icons i {
+    font-size: 2.5rem;
+    color: var(--text-gray);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.payment-icons i:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Footer */
+.footer {
+    background: var(--primary-green);
+    color: var(--white);
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.footer p {
+    margin: 10px 0;
+}
+
+.footer-disclaimer {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+/* Animações */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsividade */
+@media (max-width: 968px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 2.8rem;
+    }
+
+    .benefits {
+        text-align: left;
+    }
+
+    .trust-badges {
+        justify-content: center;
+    }
+
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .offers-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .offer-card.featured {
+        transform: scale(1);
+    }
+
+    .offer-card.featured:hover {
+        transform: scale(1.02);
+    }
+
+    .guarantee-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero-text h1 {
+        font-size: 2.2rem;
+    }
+
+    .section-header h2 {
+        font-size: 2rem;
+    }
+
+    .quantity-number {
+        font-size: 3rem;
+    }
+
+    .price-current {
+        font-size: 2.5rem;
+    }
+}
