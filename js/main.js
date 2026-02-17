@@ -1,18 +1,18 @@
 // Configuração dos links de checkout
 // IMPORTANTE: Substitua os links abaixo pelos seus links reais de checkout
 const checkoutLinks = {
-    pacote1: 'SEU_LINK_DE_CHECKOUT_PACOTE_1',
-    pacote2: 'SEU_LINK_DE_CHECKOUT_PACOTE_2',
-    pacote3: 'SEU_LINK_DE_CHECKOUT_PACOTE_3'
+    pacote1: 'https://pay.kirvano.com/4f880bf0-4ab0-43c7-bcc2-fe83f62e5376',
+    pacote2: 'https://pay.kirvano.com/4d158906-0d52-47f7-89b2-a58dd8cbad6b',
+    pacote3: 'https://pay.kirvano.com/5c406e6b-cca2-44df-9268-8e78931e7b9c'
 };
 
 // Função para redirecionar para o checkout
 function redirectToCheckout(pacote) {
     const link = checkoutLinks[pacote];
     
-    if (link && link !== 'SEU_LINK_DE_CHECKOUT_PACOTE_1' && 
-        link !== 'SEU_LINK_DE_CHECKOUT_PACOTE_2' && 
-        link !== 'SEU_LINK_DE_CHECKOUT_PACOTE_3') {
+    if (link && link !== 'https://pay.kirvano.com/4f880bf0-4ab0-43c7-bcc2-fe83f62e5376' && 
+        link !== 'https://pay.kirvano.com/4d158906-0d52-47f7-89b2-a58dd8cbad6b' && 
+        link !== 'https://pay.kirvano.com/5c406e6b-cca2-44df-9268-8e78931e7b9c') {
         // Redireciona para o link externo
         window.location.href = link;
     } else {
