@@ -9,18 +9,12 @@ const checkoutLinks = {
 // Função para redirecionar para o checkout
 function redirectToCheckout(pacote) {
     const link = checkoutLinks[pacote];
-    
-    if (link && link !== 'https://pay.kirvano.com/4f880bf0-4ab0-43c7-bcc2-fe83f62e5376' && 
-        link !== 'https://pay.kirvano.com/4d158906-0d52-47f7-89b2-a58dd8cbad6b' && 
-        link !== 'https://pay.kirvano.com/5c406e6b-cca2-44df-9268-8e78931e7b9c') {
-        // Redireciona para o link externo
+
+    if (link) {
         window.location.href = link;
-    } else {
-        // Se o link ainda não foi configurado, mostra um alerta
-        alert('Por favor, configure o link de checkout no arquivo js/main.js');
-        console.log('Configure os links de checkout na variável checkoutLinks');
     }
 }
+
 
 // Smooth scroll para as seções
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
