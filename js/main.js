@@ -15,7 +15,6 @@ function redirectToCheckout(pacote) {
     }
 }
 
-
 // Smooth scroll para as seções
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
